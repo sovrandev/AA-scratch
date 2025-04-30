@@ -6,7 +6,7 @@ const cors = require('cors');
 const socket = require('socket.io');
 
 // Load application config
-require('dotenv').config({ path: './config/config.env' });
+require('dotenv').config();
 
 // Init express app & create http server
 const app = express();
