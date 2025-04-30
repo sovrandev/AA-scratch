@@ -5,7 +5,7 @@ module.exports = {
     hcaptcha_api_key: "c5bcc878-9664-4334-a5b2-8f02311c399e",
     backend: {
       url: IS_PRODUCTION 
-        ? "https://api.solclash.com"  // Your production API URL
+        ? "https://aa-scratch.onrender.com"  // Render deployment URL
         : "http://localhost:5000",    // Your local development API URL
     },
     frontend: {
