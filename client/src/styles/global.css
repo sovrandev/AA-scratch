@@ -1,0 +1,85 @@
+:root {
+  /* Main Colors - Lightest to Darkest */
+  --color-bg-main: #111114;
+  --color-box-main: #16161B;
+  --color-box-inner: #222228;
+  --color-border: #363640;
+
+  /* Accent Colors */
+  --color-accent-primary: #8C5AFF;
+  --color-accent-secondary: #5D9DFE;
+  --color-gradient: linear-gradient(90deg, #8C5AFF 0%, #5A9CFF 100%);
+
+  /* Font Colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #888888;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+
+  /* Z-index layers */
+  --z-index-dropdown: 100;
+  --z-index-modal: 200;
+  --z-index-tooltip: 300;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&display=swap');
+
+body, button, input, textarea, select, div {
+  font-family: 'Onest', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  /* ADDED */
+  margin: 0;
+  /* ADDED */
+  font-family: "Onest", sans-serif !important;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  /* ADDED */
+  -moz-box-sizing: border-box;
+  /* ADDED */
+  -ms-box-sizing: border-box;
+  /* ADDED */
+  -o-box-sizing: border-box;
+  /* ADDED */
+  box-sizing: border-box;
+  /* ADDED */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 14px;
+  background: #1d2125;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #272b2f;
+  border-radius: 14px;
+  border: 1px solid #1e2225;
+}
