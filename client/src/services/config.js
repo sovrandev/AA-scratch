@@ -10,7 +10,7 @@ module.exports = {
     },
     frontend: {
       url: IS_PRODUCTION
-        ? "https://solclash.com"      // Your production frontend URL
+        ? "https://solclashtest.com"      // Your production frontend URL
         : "http://localhost:3000",    // Your local development frontend URL
     }
   },

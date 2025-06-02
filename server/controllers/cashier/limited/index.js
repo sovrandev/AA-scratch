@@ -550,10 +550,10 @@ const cashierLimitedCheckSteamItems = async() => {
 const cashierLimitedInit = (io) => {
     try {
         // Check limited items
-        cashierLimitedCheckItems(io);
+        // cashierLimitedCheckItems(io);
         
         // Check Steam CS:GO items
-        cashierLimitedCheckSteamItems();
+        // cashierLimitedCheckSteamItems();
     } catch(err) {
         console.error(err);
     }
