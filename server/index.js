@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = socket(server, {
     transports: ['websocket', 'polling'],
     cors: {
-        origin: process.env.SERVER_FRONTEND_URL?.split(',') || '*',
+        origin: '*',
         credentials: true,
         methods: ["GET", "POST"]
     },
@@ -38,7 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(hpp());
 app.use(cors({
-    origin: process.env.SERVER_FRONTEND_URL?.split(',') || '*',
+    origin: '*',
     credentials: true
 }));
 
@@ -84,10 +84,10 @@ app.use((req, res) => {
 require('./sockets')(io);
 
 // Set app port
-const PORT = process.env.SERVER_PORT || 5000;
+const PORT = process.env.PORT || 10000;
 
 // Add error handling for server startup
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
 }).on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
