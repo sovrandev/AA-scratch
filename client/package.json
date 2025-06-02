@@ -25,13 +25,13 @@
     "node-gyp": "^10.2.0",
     "nprogress": "^0.2.0",
     "qrcode.react": "^4.2.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
     "react-chartjs-2": "^5.2.0",
     "react-circular-progressbar": "^2.2.0",
     "react-countup": "^6.5.3",
     "react-date-range": "^2.0.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-responsive-spritesheet": "^2.3.9",
     "react-router-dom": "^6.26.1",
@@ -69,8 +69,8 @@
   },
   "resolutions": {
     "react-error-overlay": "6.0.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "react-error-overlay": "6.0.9"
