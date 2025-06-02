@@ -29,8 +29,8 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    background: theme.bg.nav,
-    zIndex: 100,
+    //background: theme.bg.nav,
+    //zIndex: 100,
     borderRight: `1px solid ${theme.bg.border}66`,
     // boxShadow: "0 2px 10px rgba(0, 0, 0, 0.3)"
   },

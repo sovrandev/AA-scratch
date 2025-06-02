@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
       transform: "translate(-50%, -50%)",
       width: "600px",
       height: "600px",
-      background: theme.accent.primary,
+      background: theme.accent.primaryGradient,
       borderRadius: "50%",
       opacity: 0.25,
       filter: "blur(80px)",
@@ -208,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "24px",
       },
       "& span": {
-        background: theme.accent.primary,
+        background: theme.accent.primaryGradient,
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent"
       }
@@ -222,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
       },
       "& span": {
         fontWeight: 600,
-        background: theme.accent.primary,
+        background: theme.accent.primaryGradient,
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent"
       }
