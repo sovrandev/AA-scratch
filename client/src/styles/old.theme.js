@@ -2,17 +2,17 @@ import { createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
   bg: {
-    nav: '#212126',
-    main: '#1F1F24',
-    box: '#2b2b30',
-    inner: '#414147',
-    border: '#363640'
+    nav: '#0C0E14',
+    main: '#0C0E14',
+    box: '#151822',
+    inner: '#1F2433',
+    border: '#1F2433'
   },
 
   accent: {
-    primary: '#5D9DFE',
-    primaryGradient: 'linear-gradient(90deg, #5D9DFE 0%, #3584fc 100%)',
-    primaryGradientLowOpacity: 'linear-gradient(90deg, #5D9DFE33 0%, #3584fc33 100%)',
+    primary: '#305FEB',
+    primaryGradient: 'linear-gradient(90deg, #9546FD 0%, #4E89C7 50%, #0FC397 100%)',
+    primaryGradientLowOpacity: 'linear-gradient(90deg, #9546FD33 0%, #4E89C733 50%, #0FC39733 100%)',
   },
 
   text: {

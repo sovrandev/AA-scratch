@@ -61,6 +61,7 @@ module.exports = (io) => {
         require('./wallet')(io, socket);
         require('./streamers')(io, socket);
         require('./actions')(io, socket);
+        require('./limiteditems')(io, socket);
 
         socket.on('disconnect', async() => {
             const identifier = socket.handshake.headers['cf-connecting-ip'] || socket.conn.remoteAddress;

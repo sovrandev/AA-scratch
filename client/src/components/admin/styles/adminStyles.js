@@ -174,10 +174,6 @@ export const useAdminStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     border: `1px solid ${theme.bg.border}`,
     transition: 'all 0.2s ease',
-    '&:hover': {
-      backgroundColor: theme.palette.hover_lightgrey,
-      transform: 'translateY(-2px)'
-    }
   },
   badge: {
     padding: '4px 8px',

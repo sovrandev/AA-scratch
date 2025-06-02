@@ -25,8 +25,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "center",
     position: "relative",
-    //zIndex: 100,
-    //backgroundColor: theme.bg.nav,
+    zIndex: 100,
+    backgroundColor: theme.bg.nav,
     borderBottom: `1px solid ${theme.bg.border}66`,
   },
 

@@ -15,7 +15,8 @@ import {
   Assessment,
   AccountBalanceWallet,
   VideoLibrary,
-  History
+  History,
+  AddShoppingCart
 } from '@material-ui/icons';
 
 const ADMIN_ROUTES = [
@@ -30,6 +31,7 @@ const ADMIN_ROUTES = [
   { path: '/admin/actions', label: 'Actions Log', icon: <History /> },
   { path: '/admin/leaderboard', label: 'Leaderboard', icon: <EmojiEvents /> },
   { path: '/admin/boxes', label: 'Boxes', icon: <Redeem /> },
+  { path: '/admin/limited-items', label: 'Limited Items', icon: <AddShoppingCart /> },
   // { path: '/admin/filters', label: 'Filters', icon: <FilterList /> },
   // { path: '/admin/rain', label: 'Rain', icon: <CloudQueue /> },
 ];

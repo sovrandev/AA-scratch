@@ -48,6 +48,7 @@ import LedgerManager from './components/admin/ledger/LedgerManager';
 import WalletManager from './components/admin/wallet/WalletManager';
 import StreamersManager from './components/admin/streamers/StreamersManager';
 import ActionsLog from './components/admin/actions/ActionsLog';
+import LimitedItemsManager from './components/admin/limiteditems/LimitedItemsManager';
 
 // Modals
 import CashierModal from "./components/cashier/CashierModal";
@@ -176,6 +177,7 @@ const AppContent = () => {
                 <Route path="wallet" element={<WalletManager />} />
                 <Route path="streamers" element={<StreamersManager />} />
                 <Route path="actions" element={<ActionsLog />} />
+                <Route path="limited-items" element={<LimitedItemsManager />} />
               </Route>
 
               {/* Pages with LiveDrops */}

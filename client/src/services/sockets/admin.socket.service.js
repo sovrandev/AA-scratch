@@ -13,7 +13,7 @@ class AdminSocketService {
         if (response.success) {
           resolve(response);
         } else {
-          reject(new Error(response.error.message || 'Request failed'));
+          reject(new Error(response.error?.message || 'Request failed'));
         }
       });
     });
@@ -229,6 +229,24 @@ class AdminSocketService {
   getAdminActions(data) {
     return this.emitWithPromise('getAdminActions', data);
   }
+
+  // Limited Items
+  getLimitedItems(page, search) {
+    return this.emitWithPromise('getLimitedItems', { page, search });
+  }
+
+  sendLimitedItemCreate(data) {
+    return this.emitWithPromise('sendLimitedItemCreate', data);
+  }
+
+  sendLimitedItemUpdate({ itemId, ...data }) {
+    return this.emitWithPromise('sendLimitedItemUpdate', { itemId, ...data });
+  }
+
+  sendLimitedItemRemove({ itemId }) {
+    return this.emitWithPromise('sendLimitedItemRemove', { itemId });
+  }
 }
 
+// Export a singleton instance
 export const adminSocketService = new AdminSocketService(); 

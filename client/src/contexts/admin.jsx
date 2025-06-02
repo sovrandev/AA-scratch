@@ -700,6 +700,98 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
+  /**
+   * Fetches limited items with pagination and search
+   * @param {number} page - Page number
+   * @param {string} search - Search query
+   * @returns {Promise<Array>} List of limited items
+   */
+  const getLimitedItems = async (page = 1, search = '') => {
+    try {
+      setLoading(true);
+      const response = await adminSocketService.getLimitedItems(page, search);
+      if (response.success) {
+        return {
+          items: response.items,
+          pages: response.pages
+        };
+      }
+      return { items: [], pages: 0 };
+    } catch (error) {
+      notify.error(error.message || 'Failed to fetch limited items');
+      return { items: [], pages: 0 };
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  /**
+   * Creates a new limited item
+   * @param {Object} data - Limited item data
+   * @returns {Promise<Object|null>} Created item or null on failure
+   */
+  const createLimitedItem = async (data) => {
+    try {
+      const response = await adminSocketService.sendLimitedItemCreate({
+        name: data.name,
+        price: data.price,
+        imageUrl: data.imageUrl
+      });
+      if (response.success) {
+        notify.success('Limited item created successfully');
+        return response.item;
+      }
+      return null;
+    } catch (error) {
+      notify.error(error.message || 'Failed to create limited item');
+      return null;
+    }
+  };
+
+  /**
+   * Updates a limited item
+   * @param {string} itemId - Item ID
+   * @param {Object} data - Updated item data
+   * @returns {Promise<Object|null>} Updated item or null on failure
+   */
+  const updateLimitedItem = async (itemId, data) => {
+    try {
+      const response = await adminSocketService.sendLimitedItemUpdate({
+        itemId,
+        name: data.name,
+        price: data.price,
+        imageUrl: data.imageUrl
+      });
+      if (response.success) {
+        notify.success('Limited item updated successfully');
+        return response.item;
+      }
+      return null;
+    } catch (error) {
+      notify.error(error.message || 'Failed to update limited item');
+      return null;
+    }
+  };
+
+  /**
+   * Deletes a limited item
+   * @param {string} itemId - Item ID
+   * @returns {Promise<boolean>} Success status
+   */
+  const deleteLimitedItem = async (itemId) => {
+    try {
+      const response = await adminSocketService.sendLimitedItemRemove({ itemId });
+      if (response.success) {
+        notify.success('Limited item deleted successfully');
+        return true;
+      }
+      return false;
+    } catch (error) {
+      notify.error(error.message || 'Failed to delete limited item');
+      return false;
+    }
+  };
+
   const value = {
     loading,
     // Leaderboard
@@ -747,6 +839,11 @@ export const AdminProvider = ({ children }) => {
     updateAffiliateCode,
     updateAffiliateAvailable,
     updateAffiliateSettings,
+    // Limited Items
+    getLimitedItems,
+    createLimitedItem,
+    updateLimitedItem,
+    deleteLimitedItem,
   };
 
   return (
