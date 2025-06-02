@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = socket(server, {
     transports: ['websocket', 'polling'],
     cors: {
-        origin: process.env.SERVER_FRONTEND_URL.split(','),
+        origin: process.env.SERVER_FRONTEND_URL?.split(',') || '*',
         credentials: true,
         methods: ["GET", "POST"]
     },
@@ -38,7 +38,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(hpp());
 app.use(cors({
-    origin: [...process.env.SERVER_FRONTEND_URL.split(',')],
+    origin: process.env.SERVER_FRONTEND_URL?.split(',') || '*',
     credentials: true
 }));
 
@@ -49,6 +49,9 @@ app.set('views', path.join(__dirname, '/views'));
 // Mount routes
 app.use('/api', require('./routes')(io));
 app.use('/public', express.static(path.join(__dirname, 'public')));
+
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Add error handling middleware
 app.use((err, req, res, next) => {
@@ -62,15 +65,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Add 404 handler
+// Add 404 handler - serve index.html for client-side routing
 app.use((req, res) => {
-  res.status(404).json({ 
-    success: false, 
-    error: { 
-      type: 'error', 
-      message: 'Route not found' 
-    } 
-  });
+  if (req.path.startsWith('/api')) {
+    res.status(404).json({ 
+      success: false, 
+      error: { 
+        type: 'error', 
+        message: 'Route not found' 
+      } 
+    });
+  } else {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  }
 });
 
 // Mount sockets
