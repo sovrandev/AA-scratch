@@ -7,4 +7,5 @@ execSync('cd ../client && npm install --legacy-peer-deps && npm run build', { st
 
 // Start the server
 console.log('Starting server...');
+execSync('cd ../server && npm install --legacy-peer-deps && node index.js', { stdio: 'inherit' });
 require('./index.js'); 
