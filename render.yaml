@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: clap-app
+    env: node
+    buildCommand: |
+      cd client && npm install && npm run build
+      cd ../server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      # Add other environment variables your app needs
+
+  - type: web
+    name: clap-frontend
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    startCommand: cd client && npm start
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://clap-backend.onrender.com
+      # Add other frontend environment variables 
