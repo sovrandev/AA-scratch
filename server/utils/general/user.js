@@ -109,16 +109,29 @@ const generalUserGetLevel = (user) => {
 }
 
 const generalUserGetRakeback = (user) => {
-    if(generalUserGetLevel(user) >= 10 && generalUserGetLevel(user) < 20) { rakeback = { name: 'bronze I', percentage: 0.0025 } }
-    else if(generalUserGetLevel(user) >= 20 && generalUserGetLevel(user) < 30) { rakeback = { name: 'bronze II', percentage: 0.005 } }
-    else if(generalUserGetLevel(user) >= 30 && generalUserGetLevel(user) < 40) { rakeback = { name: 'bronze III', percentage: 0.0075 } }
-    else if(generalUserGetLevel(user) >= 40 && generalUserGetLevel(user) < 50) { rakeback = { name: 'silver I', percentage: 0.01 } }
-    else if(generalUserGetLevel(user) >= 50 && generalUserGetLevel(user) < 60) { rakeback = { name: 'silver II', percentage: 0.0125} }
-    else if(generalUserGetLevel(user) >= 60 && generalUserGetLevel(user) < 70) { rakeback = { name: 'silver III', percentage: 0.015 } }
-    else if(generalUserGetLevel(user) >= 70 && generalUserGetLevel(user) < 80) { rakeback = { name: 'gold I', percentage: 0.0175 } }
-    else if(generalUserGetLevel(user) >= 80 && generalUserGetLevel(user) < 90) { rakeback = { name: 'gold II', percentage: 0.02 } }
-    else if(generalUserGetLevel(user) >= 90 && generalUserGetLevel(user) < 100) { rakeback = { name: 'gold III', percentage: 0.0225} }
-    else if(generalUserGetLevel(user) == 100) { rakeback = { name: 'diamond', percentage: 0.025 } }
+    let rakeback = { name: 'none', percentage: 0 }; 
+    
+    if (generalUserGetLevel(user) >= 10 && generalUserGetLevel(user) < 20) {
+        rakeback = { name: 'bronze I', percentage: 0.0025 };
+    } else if (generalUserGetLevel(user) >= 20 && generalUserGetLevel(user) < 30) {
+        rakeback = { name: 'bronze II', percentage: 0.005 };
+    } else if (generalUserGetLevel(user) >= 30 && generalUserGetLevel(user) < 40) {
+        rakeback = { name: 'bronze III', percentage: 0.0075 };
+    } else if (generalUserGetLevel(user) >= 40 && generalUserGetLevel(user) < 50) {
+        rakeback = { name: 'silver I', percentage: 0.01 };
+    } else if (generalUserGetLevel(user) >= 50 && generalUserGetLevel(user) < 60) {
+        rakeback = { name: 'silver II', percentage: 0.0125 };
+    } else if (generalUserGetLevel(user) >= 60 && generalUserGetLevel(user) < 70) {
+        rakeback = { name: 'silver III', percentage: 0.015 };
+    } else if (generalUserGetLevel(user) >= 70 && generalUserGetLevel(user) < 80) {
+        rakeback = { name: 'gold I', percentage: 0.0175 };
+    } else if (generalUserGetLevel(user) >= 80 && generalUserGetLevel(user) < 90) {
+        rakeback = { name: 'gold II', percentage: 0.02 };
+    } else if (generalUserGetLevel(user) >= 90 && generalUserGetLevel(user) < 100) {
+        rakeback = { name: 'gold III', percentage: 0.0225 };
+    } else if (generalUserGetLevel(user) === 100) {
+        rakeback = { name: 'diamond', percentage: 0.025 };
+    }
 
     return rakeback;
 }

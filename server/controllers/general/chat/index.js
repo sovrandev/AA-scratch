@@ -93,10 +93,7 @@ const generalSendChatMessageSocket = (io, socket, user, data, callback) => {
         } else {
             // Get user level
             const level = generalUserGetLevel(user);
-
-            // Get user rakeback
-            const rakeback = generalUserGetRakeback(user);
-
+            
             // Create user message object
             message = {
                 message: generalFilterMessage(data.message, generalChatFilter),
@@ -108,7 +105,6 @@ const generalSendChatMessageSocket = (io, socket, user, data, callback) => {
                     avatar: user.avatar,
                     rank: user.rank,
                     level: level,
-                    rakeback: rakeback.name,
                     stats: user.anonymous === true ? null : user.stats,
                     createdAt: user.createdAt
                 },

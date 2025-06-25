@@ -55,7 +55,7 @@ module.exports = (io, socket) => {
                 await rateLimiter.consume(identifier);
                 await socketCheckAntiSpam(socket.decoded._id);
                 try {
-                    const user = await User.findById(socket.decoded._id).select('roblox.id username avatar rank xp stats anonymous mute ban createdAt').lean();
+                    const user = await User.findById(socket.decoded._id).select('roblox.id username avatar rakeback rank xp stats anonymous mute ban createdAt').lean();
                     socketCheckUserData(user, true);
                     settingCheck(user, 'chat.enabled');
                     generalSendChatMessageSocket(io, socket, user, data, callback);
